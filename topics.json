@@ -1,0 +1,334 @@
+"name": "taas.cacib.scf-int.03.str.paid_from_buyer_or_supplier.json",
+
+"name": "taas.cacib.scf-int.00.str.payability_refused.json",
+
+"name": "taas.cacib.scf-int.02.str.decreased_amount.json",
+
+"name": "taas.cacib.scf-int.02.str.payment_grouped.json",
+
+"name": "taas.cacib.scf-int.03.str.acc_retain.json",
+
+"name": "taas.cacib.scf-int.03.str.risk_refused.json",
+
+"name": "taas.cacib.scf-int.03.str.treasury_to_be_mapped.json",
+
+"name": "taas.cacib.scf-int.03.str.revenues_computed.json",
+
+"name": "taas.cacib.scf-int.01.str.trs_mapped.json",
+
+"name": "taas.cacib.scf-int.05.str.risk_approved.json",
+
+"name": "taas.cacib.scf-int.01.str.mitigant_detached.json",
+
+"name": "taas.cacib.scf-int.03.str.payment_to_be_released.json",
+
+"name": "taas.cacib.scf-int.05.str.treasury_to_be_mapped.json",
+
+"name": "taas.cacib.scf-int.03.str.acquired.json",
+
+"name": "taas.cacib.scf-int.06.str.auto_collection_approved.json",
+
+"name": "taas.cacib.scf-int.02.str.mitigant-end-date-reached.json",
+
+"name": "taas.cacib.scf-int.00.str.revenues_booking.json",
+
+"name": "taas.cacib.scf-int.02.str.pay_retain.json",
+
+"name": "taas.cacib.scf-int.05.str.funders_assigned.json",
+
+"name": "taas.cacib.scf-int.01.str.acc_key_calculated.json",
+
+"name": "taas.cacib.scf-int.03.str.trs_routed.json",
+
+"name": "taas.cacib.scf-int.03.str.pay_retain.json",
+
+"name": "taas.cacib.scf-int.02.str.trs_grouped.json",
+
+"name": "taas.cacib.scf-int.01.str.payability_refused.json",
+
+"name": "taas.cacib.scf-int.01.str.acc_mapped.json",
+
+"name": "taas.cacib.scf-int.06.str.accounting_released.json",
+
+"name": "taas.cacib.scf-int.02.str.accounting_to_be_retained.json",
+
+"name": "taas.cacib.scf-int.06.str.accounting_to_be_routed.json",
+
+"name": "taas.cacib.scf-int.01.str.finance_file_uploaded.json",
+
+"name": "taas.cacib.scf-int.06.str.accounting_grouped.json",
+
+"name": "taas.cacib.scf-int.03.str.post_acbs.json",
+
+"name": "taas.cacib.scf-int.01.str.acquired.json",
+
+"name": "taas.cacib.scf-int.05.str.payment_to_be_grouped.json",
+
+"name": "taas.cacib.scf-int.03.str.treasury_to_be_released.json",
+
+"name": "taas.cacib.scf-int.03.str.revenues_booked.json",
+
+"name": "taas.cacib.scf-int.02.str.revenues_booked.json",
+
+"name": "taas.cacib.scf-int.06.str.risk_refused.json",
+
+"name": "taas.cacib.scf-int.02.str.accounting_released.json",
+
+"name": "taas.cacib.scf-int.transit.str.accounting_to_be_routed.json",
+
+"name": "taas.cacib.scf-int.03.str.pending_collection_confirmation.json",
+
+"name": "taas.cacib.scf-int.03.str.paid.json",
+
+"name": "taas.cacib.scf-int.02.str.dispatched.json",
+
+"name": "taas.cacib.scf-int.03.str.pay_routed.json",
+
+"name": "taas.cacib.scf-int.00.str.loan_to_be_mapped.json",
+
+"name": "taas.cacib.scf-int.02.str.paid_from_buyer_or_supplier.json",
+
+"name": "taas.cacib.scf-int.05.str.orchestrator.json",
+
+"name": "taas.cacib.scf-int.05.str.payability_refused.json",
+
+"name": "taas.cacib.scf-int.transit.str.payment_to_be_retained.json",
+
+"name": "taas.cacib.scf-int.06.str.accounting_to_be_released.json",
+
+"name": "taas.cacib.scf-int.06.str.treasury_to_be_released.json",
+
+"name": "taas.cacib.scf-int.01.str.integrated.json",
+
+"name": "taas.cacib.scf-int.03.str.mitigant_attached.json",
+
+"name": "taas.cacib.scf-int.00.str.deposit_advice_matched.json",
+
+"name": "taas.cacib.scf-int.05.str.acquired.json",
+
+"name": "taas.cacib.scf-int.02.str.fundability_checked.json",
+
+"name": "taas.cacib.scf-int.02.str.acc_mapped.json",
+
+"name": "taas.cacib.scf-int.01.str.accounting_to_be_routed.json",
+
+"name": "taas.cacib.scf-int.03.str.fundability_refused.json",
+
+"name": "taas.cacib.scf-int.01.str.closing_hors_bilan.json",
+
+"name": "taas.cacib.scf-int.03.str.risk_booked.json",
+
+"name": "taas.cacib.scf-int.03.str.accounting_to_be_mapped.json",
+
+"name": "taas.cacib.scf-int.02.str.deposit_advice_matched.json",
+
+"name": "taas.cacib.scf-int.transit.str.payment_released.json",
+
+"name": "taas.cacib.scf-int.06.str.orchestrator.json",
+
+"name": "taas.cacib.scf-int.01.str.pay_key_calculated.json",
+
+
+"name": "taas.cacib.scf-int.06.str.revenues_booked.json",
+
+"name": "taas.cacib.scf-int.02.str.trs_mapped.json",
+
+"name": "taas.cacib.scf-int.00.str.accounting_grouped.json",
+
+"name": "taas.cacib.scf-int.03.str.acc_grouped.json",
+
+"name": "taas.cacib.scf-int.01.str.funders-assigned.json",
+
+"name": "taas.cacib.scf-int.00.str.payment_to_be_retained.json",
+
+"name": "taas.cacib.scf-int.02.str.pending_collection_confirmation.json",
+
+"name": "taas.cacib.scf-int.03.str.trs_grouped.json",
+
+"name": "taas.cacib.scf-int.01.str.mark_as_overdue.json",
+
+"name": "taas.cacib.scf-int.01.str.in_error.json",
+
+"name": "taas.cacib.scf-int.01.str.deposit_adviced.json",
+
+"name": "taas.cacib.scf-int.00.str.treasury_grouped.json",
+
+"name": "taas.cacib.scf-int.05.str.mitigant_detached.json",
+
+"name": "taas.cacib.scf-int.06.str.revenues_booking.json",
+
+"name": "taas.cacib.scf-int.03.str.treasury_grouped.json",
+
+"name": "taas.cacib.scf-int.00.str.integrated.json",
+
+"name": "taas.cacib.scf-int.00.str.accounting_to_be_released.json",
+
+"name": "taas.cacib.scf-int.06.str.risk_approved.json",
+
+"name": "taas.cacib.scf-int.02.str.loan-decreased.json",
+
+"name": "taas.cacib.scf-int.transit.str.distributed.json",
+
+"name": "taas.cacib.scf-int.06.str.treasury_released.json",
+
+"name": "taas.cacib.scf-int.00.str.mitigant_deactivated.json",
+
+"name": "taas.cacib.scf-int.01.str.accounting_to_be_retained.json",
+
+"name": "taas.cacib.scf-int.01.str.trs_grouped.json",
+
+"name": "taas.cacib.scf-int.05.str.funders-assigned.json",
+
+"name": "taas.cacib.scf-int.02.str.auto_closed.json",
+
+"name": "taas.cacib.scf-int.03.str.accounting_to_be_released.json",
+
+"name": "taas.cacib.scf-int.02.str.distributed.json",
+
+"name": "taas.cacib.scf-int.05.str.treasury_grouped.json",
+
+"name": "taas.cacib.scf-int.01.str.mitigant_validated.json",
+
+"name": "taas.cacib.scf-int.01.str.payment_to_be_released.json",
+
+"name": "taas.cacib.scf-int.05.str.payment_to_be_released.json",
+
+"name": "taas.cacib.scf-int.02.str.pay_mapped.json",
+
+"name": "taas.cacib.scf-int.transit.str.accounting_grouped.json",
+
+"name": "taas.cacib.scf-int.00.str.risk_approved.json",
+
+"name": "taas.cacib.scf-int.02.str.treasury_to_be_released.json",
+
+"name": "taas.cacib.scf-int.02.str.accounting_to_be_released.json",
+
+"name": "taas.cacib.scf-int.02.str.loan_to_be_mapped.json",
+
+"name": "taas.cacib.scf-int.01.str.loan-decreased.json",
+
+"name": "taas.cacib.scf-int.02.str.overdue_marked.json",
+
+"name": "taas.cacib.scf-int.02.str.risk_approved.json",
+
+"name": "taas.cacib.scf-int.03.str.accounting_to_be_routed.json",
+
+"name": "taas.cacib.scf-int.transit.str.treasury_to_be_grouped.json",
+
+"name": "taas.cacib.scf-int.05.str.accounting_to_be_mapped.json",
+
+"name": "taas.cacib.scf-int.06.str.treasury_to_be_grouped.json",
+
+"name": "taas.cacib.scf-int.06.str.mitigant_validated.json",
+
+"name": "taas.cacib.scf-int.03.str.acc_mapped.json",
+
+"name": "taas.cacib.scf-int.03.str.pre-matched.json",
+
+"name": "taas.cacib.scf-int.00.str.treasury_to_be_mapped.json",
+
+"name": "taas.cacib.scf-int.03.str.data_update.json",
+
+"name": "taas.cacib.scf-int.02.str.mitigant_detached.json",
+
+"name": "taas.cacib.scf-int.transit.str.payfrombuyer_collected.json",
+
+"name": "taas.cacib.scf-int.03.str.fundability_checked_test1.json",
+
+"name": "taas.cacib.scf-int.01.str.to_be_extended.json",
+
+"name": "taas.cacib.scf-int.01.str.risk_refused.json",
+
+"name": "taas.cacib.scf-int.02.str.accounting_to_be_grouped.json",
+
+"name": "taas.cacib.scf-int.06.str.loan-decreased.json",
+
+"name": "taas.cacib.scf-int.06.str.mitigant_detached.json",
+
+"name": "taas.cacib.scf-int.00.str.revenues_booked.json",
+
+"name": "taas.cacib.scf-int.transit.str.payment_to_be_grouped.json",
+
+"name": "taas.cacib.scf-int.01.str.acc_routed.json",
+
+"name": "taas.cacib.scf-int.03.str.plt_grouped.json",
+
+"name": "taas.cacib.scf-int.01.str.plt_key_calculated.json",
+
+"name": "taas.cacib.scf-int.06.str.revenues_computed.json",
+
+"name": "taas.cacib.scf-int.01.str.payability_checked.json",
+
+"name": "taas.cacib.scf-int.01.str.treasury_to_be_released.json",
+
+"name": "taas.cacib.scf-int.01.str.revenues_booked.json",
+
+"name": "taas.cacib.scf-int.01.str.pay_release.json",
+
+"name": "taas.cacib.scf-int.02.str.acc_retain.json",
+
+"name": "taas.cacib.scf-int.03.str.trs_key_calculated.json",
+
+"name": "taas.cacib.scf-int.02.str.pay_key_calculated.json",
+
+"name": "taas.cacib.scf-int.05.str.mitigant-end-date-reached.json",
+
+"name": "taas.cacib.scf-int.01.str.payment_to_be_mapped.json",
+
+"name": "taas.cacib.scf-int.02.str.mitigant_attached.json",
+
+"name": "taas.cacib.scf-int.05.str.payment_grouped.json",
+
+"name": "taas.cacib.scf-int.tmp.str.funders_assigned.json",
+
+"name": "taas.cacib.scf-int.02.str.revenues-computed.json",
+
+"name": "taas.cacib.scf-int.03.str.mitigant_deactivated.json",
+
+"name": "taas.cacib.scf-int.03.str.mitigant-end-date-reached.json",
+
+"name": "taas.cacib.scf-int.01.str.data_update.json",
+
+"name": "taas.cacib.scf-int.transit.str.treasury_to_be_mapped.json",
+
+"name": "taas.cacib.scf-int.03.str.pay_grouped.json",
+
+"name": "taas.cacib.scf-int.00.str.risk_refused.json",
+
+"name": "taas.cacib.scf-int.01.str.plt_routed.json",
+
+"name": "taas.cacib.scf-int.02.str.integrated.json",
+
+"name": "taas.cacib.scf-int.01.str.accounting_grouped.json",
+
+"name": "taas.cacib.scf-int.00.str.payment_to_be_mapped.json",
+
+"name": "taas.cacib.scf-int.05.str.treasury_released.json",
+
+"name": "taas.cacib.scf-int.02.str.post_acbs.json",
+
+"name": "taas.cacib.scf-int.03.str.pay_release.json",
+
+"name": "taas.cacib.scf-int.03.str.loan-decreased.json",
+
+"name": "taas.cacib.scf-int.00.str.risk_booked.json",
+
+"name": "taas.cacib.scf-int.05.str.pre-matched.json",
+
+"name": "taas.cacib.scf-int.02.str.data_update.json",
+
+"name": "taas.cacib.scf-int.03.str.payability_checked.json",
+
+"name": "taas.cacib.scf-int.05.str.accounting_to_be_released.json",
+
+"name": "taas.cacib.scf-int.03.str.payfrombuyer_collected.json",
+
+"name": "taas.cacib.scf-int.00.str.payability_checked.json",
+
+
+Example: of the request
+
+{
+  "name": "taas.cacib.scf-int.03.str.plt_mapped.json",
+  "num_partitions": 7
+}
