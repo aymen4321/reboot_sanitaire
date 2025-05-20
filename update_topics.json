@@ -1,17 +1,5 @@
 [
   {
-    "name": "taas.cacib.scf-int.00.str.payability_refused.json",
-    "num_partitions": 7
-  },
-  {
-    "name": "taas.cacib.scf-int.02.str.decreased_amount.json",
-    "num_partitions": 7
-  },
-  {
-    "name": "taas.cacib.scf-int.02.str.payment_grouped.json",
-    "num_partitions": 7
-  },
-  {
     "name": "taas.cacib.scf-int.03.str.acc_retain.json",
     "num_partitions": 7
   },
