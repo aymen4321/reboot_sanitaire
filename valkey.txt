@@ -1,209 +1,85 @@
-Valkey: High-Performance In-Memory Key-Value Store for Kubernetes
-
-Valkey is a powerful, in-memory key-value data store designed for high throughput and low-latency workloads. Originating as a fork of Redis, Valkey is community-driven and governed under the Linux Foundation. It is ideal for caching, session storage, real-time analytics, and message queues. This article focuses on using Valkey within a Kubernetes cluster managed by Rancher and running on the containerd runtime.
-
-Table of Contents
-
-Architecture
-
-Installation on Kubernetes
-
-Authentication and Security
-
-Basic Usage
-
-Advanced Features
-
-Use Cases
-
-Community and Governance
-
-Architecture
-
-Valkey emphasizes speed and extensibility, making it well-suited for modern, cloud-native environments:
-
-Event-Driven Core: Single-threaded model with efficient I/O using epoll/kqueue.
-
-Persistence Options:
-
-RDB (Redis Database Backups): Snapshot-based persistence for backups.
-
-AOF (Append Only File): Logs every write operation for durability.
-
-Replication: Master-replica model supporting high availability.
-
-Clustering: Horizontal scalability using native sharding and distributed keys.
-
-Modular Design: Extend functionality through dynamic modules.
-
-Security Layers: Includes ACLs, password auth, and TLS.
-
-Installation on Kubernetes
-
-Deploying Valkey in a Rancher-Managed Cluster with containerd
-
-Valkey is best deployed using a StatefulSet when persistence and high availability are required. Below is a simplified Deployment for non-production use.
-
-Step 1: Create Deployment and Service
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: valkey
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: valkey
-  template:
-    metadata:
-      labels:
-        app: valkey
-    spec:
-      containers:
-      - name: valkey
-        image: valkey/valkey:latest
-        ports:
-        - containerPort: 6379
-        volumeMounts:
-        - name: valkey-data
-          mountPath: /data
-      volumes:
-      - name: valkey-data
-        persistentVolumeClaim:
-          claimName: valkey-pvc
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: valkey
-spec:
-  selector:
-    app: valkey
-  ports:
-  - protocol: TCP
-    port: 6379
-    targetPort: 6379
-  type: ClusterIP
-
-Step 2: Create a PersistentVolumeClaim (PVC)
-Use a StorageClass to dynamically provision storage:
-
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: valkey-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: standard
-  resources:
-    requests:
-      storage: 1Gi
-
-Replace standard with your Rancher-provisioned StorageClass if needed.
-
-Authentication and Security
-
-Password Authentication
-
-Enable password protection in valkey.conf or via environment variables:
-
-requirepass yourStrongPassword
-
-Use in the client:
-
-AUTH yourStrongPassword
-
-TLS Encryption
-
-Valkey supports secure communication using TLS:
-
-tls-port 6379
-tls-cert-file /etc/valkey/certs/valkey.crt
-tls-key-file /etc/valkey/certs/valkey.key
-tls-ca-cert-file /etc/valkey/certs/ca.crt
-
-These certificates should be stored in Kubernetes Secrets and mounted via volume mounts.
-
-Access Control Lists (ACL)
-
-Define fine-grained user permissions:
-
-user alice on >password ~* +@all
-
-Basic Usage
-
-Connecting to Valkey
-
-Use valkey-cli from within the cluster:
-
-kubectl exec -it <valkey-pod-name> -- valkey-cli
-
-Common Commands
-
-SET mykey "value"
-GET mykey
-DEL mykey
-
-Data Types Supported
-
-Strings
-
-Hashes
-
-Lists
-
-Sets
-
-Sorted Sets
-
-Bitmaps
-
-HyperLogLogs
-
-Streams
-
-Advanced Features
-
-Pub/Sub Messaging:
-
-PUBLISH channel "message"
-SUBSCRIBE channel
-
-Lua Scripting:
-
-EVAL "return redis.call('GET', KEYS[1])" 1 mykey
-
-Streams for complex data pipelines.
-
-Eviction Policies for cache management.
-
-Snapshot and AOF Persistence for durability and backup.
-
-Use Cases
-
-Web and API Caching
-
-Session Storage for Web Applications
-
-Real-Time Analytics
-
-Job Queues and Task Scheduling
-
-Rate Limiting and Counters
-
-Community and Governance
-
-Valkey is governed by the Linux Foundation and developed openly by the community.
-
-Website: https://valkey.io
-
-Source Code: https://github.com/valkey-io/valkey
-
-Discussion: GitHub Discussions, Discord
-
-Conclusion
-
-Valkey offers a high-performance, reliable alternative to Redis with a modern, open governance model. Seamlessly integrated with Kubernetes and Rancher using containerd and dynamic storage provisioning via StorageClasses, it’s an excellent choice for cloud-native applications requiring in-memory data processing.
-
+Meeting minutes 04/06/2025
+Participants : SOUBIEN Julien
+, SAHNOUNI Tariq
+, COURAUD Charles
+, LOISEAU Charles
+, BENABADJI Karim
+, Aymen Rahal, SABOUNDJI Abdelaziz
+, ZHAO Hui
+, AKHARAZ Majid
+, SEBTI Raed
+, SABOUNDJI Riyadh, SADIQI Omar
+, MAKANERA Oumar
+, FADLI Mehdi
+, CHINNAPILLAI Namasivayam
+, Sagar Shrikant, SANIKOMMU Rajasekhar
+, NIMMAGADDA Bharadwaj
+, PEIGNON Edwyn
+
+On call rules :
+•	From Monday to Monday
+•	Not the week before holidays 
+•	The on-call managers on call issues 24/7
+Team planning: 
+Jean-folly 
+Majid is in leave 
+Oumar ….
+The plan of the week is to focus in the run and than do some practice for erp its done with raed and Charles L.
+
+Data platform:
+We deployed successfully the webservices the web service is running, testing all the data instances we are working on that 
+The dashboard (we are working on it )
+Cmdb we have active mq deployed.
+Drp instance: we tested our products 
+Atlas: we need help to implement documentation 
+Run readiness: isap team discussion we will apply blueprint documents
+Jira : trying to implement jira for all product 
+Switch from hello world to hello revenue 
+We have two bare metal servers the idea is to put a hyper V
+Kubenext svc upgrade: no updates since April 
+*il faut une roadmap sur kubenext 
+*No active collaboration with the native team , Julien will help on that 
+VM-based: define a VM based build strategy
+Improve the communication with the client, the rules in ISAP its no black ticket. (will adopt the same solution)
+Incident management:
+Product maturity status:
+The new target for:
+Redis Valkey  23 May 
+ Active mQ 12 June 
+Mangodb maturity 2 – Charles check this 
+Monitoring:
+ We need to check with the monitoring team, we can define together about the monitoring.
+We will remove Nifi from the follow up.
+
+*The kafka will be kube or vm, Opensearch on VM 
+*The architect is the one who will choose the solution (VM or Kubenext) 
+Getting the need from the client->discussion with the architect ->decision making
+The data team needs to be invited to the meetings with the architect to discuss about the solution. 
+Suggestion: a catalog should be shared with the client but still we need the architect validation 
+The flyer will be sent () 
+A flyer to the dedicated to data ai 
+Wil be sent what we did, what we do, what will do, and we will get the feedback.
+MASAI:
+Lunch two cluster in two AZ, all the application will be installed in this stand-alone cluster 
+Migrate from shell script to a python code
+Tasks: define a decision tree, 
+Script is in cacib 1 gitlab this is delivered by aws 
+MSK there is nothing new for this topic this week. They need to manage version, troubleshooting and provide documentation for isap team.
+NIFI: making new documents, management and political decision.
+CMTP on GCP: Abdelaziz and Faraxen working on the presentation.
+New Calypso: majid working on the ci/cd topic and ansible tower
+Fresh on GCP: no updates on standby.
+Obso/jjos: filebeat not compatible, using logstash instead, contacted Tarik to deploy the prod VM.
+$Back up on s3 riyad will check with Raed
+$Riyadh has an issue with the scan.
+$Riyadh: One major blocker with Hadoop cluster needs to be highlighted. 
+OpenDistro: test the behaviour of the cluster, push the client to work on the jira inside the team. Work on the supervision of the cluster with Raed. The documentation will be delivered today.
+AI: 
+Actions:
+-Charles will help the onboarding team to have access to all docs in Atlas (Redis, Kafka, Mongodb, scripta, etc, …)
+-Charles will verifie the weekly meeting attends.
+-Sincap team they use kali track to trace the tickets (check with sagar).*
+-The team will go through Raed’s documentation.
+-The Isap team will share the incident process (we will adopt the process).
+-Mehdi: Mongo db entreprise needs to be at least 18%, to be done by the end of the week.
+-Charles needs to check the EMR data proc with Faraxen and Abdelaziz.
