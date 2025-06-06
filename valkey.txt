@@ -1,85 +1,152 @@
-Meeting minutes 04/06/2025
-Participants : SOUBIEN Julien
-, SAHNOUNI Tariq
-, COURAUD Charles
-, LOISEAU Charles
-, BENABADJI Karim
-, Aymen Rahal, SABOUNDJI Abdelaziz
-, ZHAO Hui
-, AKHARAZ Majid
-, SEBTI Raed
-, SABOUNDJI Riyadh, SADIQI Omar
-, MAKANERA Oumar
-, FADLI Mehdi
-, CHINNAPILLAI Namasivayam
-, Sagar Shrikant, SANIKOMMU Rajasekhar
-, NIMMAGADDA Bharadwaj
-, PEIGNON Edwyn
+Meeting Minutes – 04 June 2025
+Participants
+SOUBIEN Julien, SAHNOUNI Tariq, COURAUD Charles, LOISEAU Charles, BENABADJI Karim, Aymen Rahal, SABOUNDJI Abdelaziz, ZHAO Hui, AKHARAZ Majid, SEBTI Raed, SABOUNDJI Riyadh, SADIQI Omar, MAKANERA Oumar, FADLI Mehdi, CHINNAPILLAI Namasivayam, Sagar Shrikant, SANIKOMMU Rajasekhar, NIMMAGADDA Bharadwaj, PEIGNON Edwyn
 
-On call rules :
-•	From Monday to Monday
-•	Not the week before holidays 
-•	The on-call managers on call issues 24/7
-Team planning: 
-Jean-folly 
-Majid is in leave 
-Oumar ….
-The plan of the week is to focus in the run and than do some practice for erp its done with raed and Charles L.
+1. On-Call Management
+Rotation: Weekly, from Monday to Monday.
 
-Data platform:
-We deployed successfully the webservices the web service is running, testing all the data instances we are working on that 
-The dashboard (we are working on it )
-Cmdb we have active mq deployed.
-Drp instance: we tested our products 
-Atlas: we need help to implement documentation 
-Run readiness: isap team discussion we will apply blueprint documents
-Jira : trying to implement jira for all product 
-Switch from hello world to hello revenue 
-We have two bare metal servers the idea is to put a hyper V
-Kubenext svc upgrade: no updates since April 
-*il faut une roadmap sur kubenext 
-*No active collaboration with the native team , Julien will help on that 
-VM-based: define a VM based build strategy
-Improve the communication with the client, the rules in ISAP its no black ticket. (will adopt the same solution)
-Incident management:
-Product maturity status:
-The new target for:
-Redis Valkey  23 May 
- Active mQ 12 June 
-Mangodb maturity 2 – Charles check this 
-Monitoring:
- We need to check with the monitoring team, we can define together about the monitoring.
-We will remove Nifi from the follow up.
+Exclusions: No on-call duties the week preceding holidays.
 
-*The kafka will be kube or vm, Opensearch on VM 
-*The architect is the one who will choose the solution (VM or Kubenext) 
-Getting the need from the client->discussion with the architect ->decision making
-The data team needs to be invited to the meetings with the architect to discuss about the solution. 
-Suggestion: a catalog should be shared with the client but still we need the architect validation 
-The flyer will be sent () 
-A flyer to the dedicated to data ai 
-Wil be sent what we did, what we do, what will do, and we will get the feedback.
-MASAI:
-Lunch two cluster in two AZ, all the application will be installed in this stand-alone cluster 
-Migrate from shell script to a python code
-Tasks: define a decision tree, 
-Script is in cacib 1 gitlab this is delivered by aws 
-MSK there is nothing new for this topic this week. They need to manage version, troubleshooting and provide documentation for isap team.
-NIFI: making new documents, management and political decision.
-CMTP on GCP: Abdelaziz and Faraxen working on the presentation.
-New Calypso: majid working on the ci/cd topic and ansible tower
-Fresh on GCP: no updates on standby.
-Obso/jjos: filebeat not compatible, using logstash instead, contacted Tarik to deploy the prod VM.
-$Back up on s3 riyad will check with Raed
-$Riyadh has an issue with the scan.
-$Riyadh: One major blocker with Hadoop cluster needs to be highlighted. 
-OpenDistro: test the behaviour of the cluster, push the client to work on the jira inside the team. Work on the supervision of the cluster with Raed. The documentation will be delivered today.
-AI: 
-Actions:
--Charles will help the onboarding team to have access to all docs in Atlas (Redis, Kafka, Mongodb, scripta, etc, …)
--Charles will verifie the weekly meeting attends.
--Sincap team they use kali track to trace the tickets (check with sagar).*
--The team will go through Raed’s documentation.
--The Isap team will share the incident process (we will adopt the process).
--Mehdi: Mongo db entreprise needs to be at least 18%, to be done by the end of the week.
--Charles needs to check the EMR data proc with Faraxen and Abdelaziz.
+Responsibility: On-call managers are responsible 24/7 during their assigned week.
+
+2. Team Planning
+Jean-Folly is included in the planning.
+
+Majid is currently on leave.
+
+Oumar – pending confirmation on availability.
+
+Weekly focus:
+
+Prioritize Run activities.
+
+Conduct ERP practice sessions – completed with Raed and Charles L.
+
+3. Data Platform Updates
+Web Services: Successfully deployed and operational. Data instance testing is ongoing.
+
+Dashboards: Currently under development.
+
+CMDB: ActiveMQ is deployed.
+
+DRP Instance: Products successfully tested.
+
+Atlas: Assistance needed to implement documentation.
+
+Run Readiness: ISAP team to apply blueprint documents.
+
+Jira: In progress – aim to standardize use across all products.
+
+Infrastructure Evolution: Transitioning from “Hello World” to “Hello Revenue.”
+
+Bare Metal Servers: Plan to host Hyper-V environments.
+
+KubeNext SVC Upgrade: No updates since April.
+
+Action Needed: Roadmap required.
+
+No active collaboration with the native team – Julien to assist.
+
+VM Strategy: Define a build strategy based on virtual machines.
+
+Client Communication: Emulate ISAP rules – no "black tickets" policy.
+
+4. Incident & Product Management
+Product Maturity Targets:
+
+Redis (Valkey): Target – 23 May
+
+ActiveMQ: Target – 12 June
+
+MongoDB (Maturity Level 2): Charles to validate.
+
+5. Monitoring
+Align with the Monitoring team to define scope and responsibilities.
+
+Nifi: To be removed from follow-up tracking.
+
+Kafka: Deployment strategy (VM vs Kubernetes) under review.
+
+OpenSearch: Planned deployment on VM.
+
+Architecture Decisions: To be made by the architect based on client needs.
+
+Proposed flow: Client Need → Architect Discussion → Decision
+
+The Data Team should participate in architecture-related meetings.
+
+Suggestion: Share a technical solution catalog with clients – pending architect validation.
+
+6. Communication
+A flyer dedicated to Data & AI will be created and shared:
+
+To include: What has been done, current activities, and future plans.
+
+Feedback will be collected afterward.
+
+7. MASAI
+Two clusters to be launched in separate availability zones (AZs).
+
+All applications to be installed on a stand-alone cluster.
+
+Migration: Move from shell scripts to Python-based automation.
+
+Tasks: Define a decision tree.
+
+Script currently available on CACIB1 GitLab, delivered by AWS.
+
+8. MSK (Managed Streaming for Kafka)
+No major updates.
+
+Responsibility: Versioning, troubleshooting, and documentation for ISAP team.
+
+9. NIFI
+Focus on documentation and decisions related to governance and management.
+
+10. CMTP on GCP
+Presentation preparation in progress by Abdelaziz and Faraxen.
+
+11. New Calypso
+Majid is working on CI/CD integration and Ansible Tower.
+
+12. Fresh on GCP
+Currently on standby – no new updates.
+
+13. OBSO / JJOS
+Filebeat is not compatible – Logstash being used as a replacement.
+
+Tarik contacted to deploy the production VM.
+
+14. Backup
+S3 Backups: Riyadh to follow up with Raed.
+
+Security Scan Issue: Riyadh investigating.
+
+Major Blocker: Hadoop cluster – to be escalated and highlighted.
+
+15. OpenDistro
+Behavior testing of the cluster ongoing.
+
+Encourage client engagement in Jira within the team.
+
+Cluster supervision assigned to Raed.
+
+Documentation to be delivered today.
+
+16. AI – Actions & Follow-ups
+Charles:
+
+Assist onboarding team with access to Atlas documentation (Redis, Kafka, MongoDB, scripts, etc.).
+
+Verify weekly meeting attendance.
+
+Sincap Team: Uses Kali Track for ticket tracing – check with Sagar.
+
+Raed’s Documentation: Team to review collectively.
+
+ISAP Team: Will share their incident management process – to be adopted.
+
+Mehdi: Ensure MongoDB Enterprise usage reaches at least 18% by week’s end.
+
+Charles: To check EMR DataProc with Faraxen and Abdelaziz.
+
