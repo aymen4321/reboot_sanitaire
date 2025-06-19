@@ -1,10 +1,18 @@
-Hi Team,
+Hey Team,
 
-I've noticed our Snowboard backlog is getting pretty crowded, with a growing number of tickets still hanging around (and a lot of them in black 🖤). To help clean things up, I’ve created a dedicated “Backlog” status so we can better track and redistribute these tickets.
+Just circling back as I didn’t get any replies to my last email 😅
+Meanwhile, the Snowboard backlog is still growing, and some folks (Oumar 👀) have 10+ tickets sitting there.
 
-👉 I’d like to propose a short session (1–2 hours) to go through the backlog together and reassign tickets where possible. This will help us move things forward and keep our board clean and manageable.
+Let’s take a moment to:
 
-📌 Note: Not everyone has access to all the tools (like Ops Manager or PSSIT), so I’ve attached an Excel sheet listing current access status. Feel free to update it if anything’s missing.
+Reassign or close tickets if they’re not active
 
-Let’s build the reflex of keeping our backlog lean – and make our Snowboard shine again! ✨
-Looking forward to your input and support.
+Follow up on any blockers
+
+Use the “Backlog” status to flag what needs review
+
+If things stay untouched, I’ll start jumping in where needed — goal is to keep the board clean and actionable ✨
+
+Access sheet is attached again for your updates.
+
+Thanks all,
