@@ -1,1 +1,3 @@
-A consumer group taas.cacib.otr-dev.group.dev-cdc has been created and the ACLs has been granted to consume from CDC topic "taas.cacib.cdc-dev.queue.notification-flows.json". for the other request "to read from a topic in PPRD to INT env" its not possible using ACLs because its TWO different clusters.
+The consumer group taas.cacib.otr-dev.group.dev-cdc has been successfully created, and the necessary ACLs have been granted to allow consumption from the CDC topic taas.cacib.cdc-dev.queue.notification-flows.json.
+
+As for the second request regarding reading from a topic in the PPRD environment from the INT environment — this is not feasible via ACLs, as it involves two different Kafka clusters, and cross-cluster access is not supported in this way.
