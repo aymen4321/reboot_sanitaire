@@ -1,18 +1,1 @@
-Hey Team,
-
-Just circling back as I didn’t get any replies to my last email 😅
-Meanwhile, the Snowboard backlog is still growing, and some folks (Oumar 👀) have 10+ tickets sitting there.
-
-Let’s take a moment to:
-
-Reassign or close tickets if they’re not active
-
-Follow up on any blockers
-
-Use the “Backlog” status to flag what needs review
-
-If things stay untouched, I’ll start jumping in where needed — goal is to keep the board clean and actionable ✨
-
-Access sheet is attached again for your updates.
-
-Thanks all,
+A consumer group taas.cacib.otr-dev.group.dev-cdc has been created and the ACLs has been granted to consume from CDC topic "taas.cacib.cdc-dev.queue.notification-flows.json". for the other request "to read from a topic in PPRD to INT env" its not possible using ACLs because its TWO different clusters.
