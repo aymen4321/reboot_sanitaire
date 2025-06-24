@@ -1,3 +1,107 @@
-The consumer group taas.cacib.otr-dev.group.dev-cdc has been successfully created, and the necessary ACLs have been granted to allow consumption from the CDC topic taas.cacib.cdc-dev.queue.notification-flows.json.
+Valkey: An Open-Source Alternative to Redis
 
-As for the second request regarding reading from a topic in the PPRD environment from the INT environment — this is not feasible via ACLs, as it involves two different Kafka clusters, and cross-cluster access is not supported in this way.
+🔖 Introduction
+
+Valkey is a high-performance, in-memory key-value data store and a drop-in alternative to Redis. It was created by the open-source community under the Linux Foundation after Redis Labs changed Redis's license from open-source (BSD) to the Redis Source Available License (RSAL). Valkey is fully open-source under the BSD 3-Clause license, ensuring long-term freedom and flexibility for users.
+
+🔹 Key Features
+
+In-memory storage with optional disk persistence
+
+Supports Redis data types: strings, lists, sets, hashes, sorted sets
+
+Pub/Sub messaging
+
+Streams and Lua scripting
+
+Replication, clustering, and high availability
+
+Full Redis protocol compatibility (v7.0+)
+
+Designed for low-latency, high-throughput applications
+
+🔄 Valkey vs. Redis
+
+Feature
+
+Redis
+
+Valkey
+
+License
+
+Redis Source Available
+
+BSD 3-Clause (Open Source)
+
+Governance
+
+Redis Ltd.
+
+Linux Foundation + Community
+
+Origin
+
+Original project
+
+Forked from Redis 7.0
+
+Compatibility
+
+Native
+
+Fully compatible with Redis
+
+🚧 Installation
+
+Docker
+
+docker pull valkey/valkey
+docker run -p 6379:6379 valkey/valkey
+
+Local Build
+
+git clone https://github.com/valkey-io/valkey.git
+cd valkey
+make
+src/valkey-server
+
+📚 Use Cases
+
+Replace Redis in systems that require open-source-only components
+
+Use in cloud-native or on-premise architectures
+
+Ideal for microservices, caching layers, pub/sub systems, and real-time analytics
+
+✅ Compatibility
+
+Works with existing Redis clients:
+
+redis-cli, redis-py, ioredis, Lettuce, Jedis
+
+No major changes needed for migration
+
+🚀 Community & Roadmap
+
+Maintained by Linux Foundation and a growing community
+
+Actively developed on GitHub: https://github.com/valkey-io/valkey
+
+Discussions, issues, and PRs encouraged
+
+📆 Conclusion
+
+Valkey offers an open, drop-in alternative to Redis with full protocol compatibility, a modern development approach, and strong community backing. Whether you're looking for open governance or long-term open-source compliance, Valkey is a reliable choice.
+
+📅 References & Resources
+
+Official Site: https://valkey.io
+
+Documentation: https://valkey.io/docs
+
+GitHub: https://github.com/valkey-io/valkey
+
+RedisInsight: https://www.redis.com/redis-enterprise/redisinsight/
+
+YouTube Intro Talk: https://www.youtube.com/watch?v=YpQUeUobW10
