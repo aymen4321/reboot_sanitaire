@@ -1,49 +1,41 @@
-Créée par Utilisateur inconnu (u41jl97@zoe.gca), dernière mise à jour par NOUSHI Reda (PRESTATAIRE CA-GIP) le juil. 11, 2025  1 min de lecture
-The product includes
-INCLUDED SERVICE
+Additional Information
+Valkey is a community-driven fork of Redis under the BSD license, built after Redis core moved to a source-available model.
+
+It offers drop-in compatibility with Redis 7.x+ and supports the majority of Redis features, including persistence, replication, Lua scripting, pub/sub, and modules.
+
+Kubernetes-native deployments are supported via Helm charts or Kustomize templates.
+
+Horizontal scaling is achievable with Redis Cluster mode; vertical scaling via PVCs and memory tuning.
+
+Role-Based Access Control (RBAC) is achievable through Kubernetes namespaces and Valkey ACLs.
+
+Monitoring is available via Prometheus exporters; alerting through Grafana Alerting or AlertManager.
+
+Valkey modules (ValkeyJSON, ValkeyTimeSeries, etc.) are available as maintained forks of Redis modules.
+
+Would you like this exported into a Word/PDF format or inserted into your documentation platform (e.g., Confluence, Markdown repo)?
 
 
 
-Multi DC Active Redis Enterprise Cluster
-In Memory Databases
-Grafana Dashboards
-Databases backups
-Cluster backups
-Cluster Administration UI
-Alerting
-Database Access Management with My-Access Management
-Cluster Access Management via My-Access Management
-Enterprise Support
-ADDS-ON
 
 
 
-RedisTimeSeries: For handling time-series data, ideal for IoT and analytics applications.
-RedisSearch: Provides full-text and vector similarity search capabilities within Redis.
-RedisJSON: Supports flexible storage and querying of JSON documents.
-RedisBloom: Enhances memory efficiency with bloom filters and hyperloglog structures.
-OPTIONAL SERVICE
+
+You said:
+for the table not like that, like this  a table with included service, adds-on, optional service, non included servide.
 
 
+ChatGPT said:
+Perfect — here is the structured Valkey feature matrix formatted as a clean 4-column table with the sections:
 
-RedisInsight client
-Customised Logs Dashboards
-Persistence of data (In Disk)
-Customised Grafana Dashboards
-Customised Prometheus Dashboards
-API Access
-CLI Access
-Autoscaling
-Mail alerts
-Rousources limits by database
-Auto Tiering
-Active-Active mode
-NON INCLUDED SERVICE
+📦 Valkey Product Feature Matrix
+Included Service	Add-Ons	Optional Service	Non-Included Service
+Multi-DC Valkey Cluster Support	ValkeyJSON (fork of RedisJSON)	ValkeyInsight UI (RedisInsight-compatible or open-source)	Cloud-hosted Instances
+In-Memory Database (Key-Value Store)	ValkeySearch (RediSearch fork)	Custom Grafana Dashboards	Commercial BI Tool Integration
+ACL-Based Access Control	ValkeyTimeSeries	Prometheus Exporter for Monitoring	Enterprise SLA & Support
+RDB / AOF Persistence	ValkeyBloom (Bloom Filters, HyperLogLog)	Email Alerts (via AlertManager or SMTP hook)	Fully Managed Cluster Service
+Basic Cluster Administration via CLI / open-source UI		Disk Persistence (AOF/RDB) Configuration	Redis Gears or AI (not available yet in Valkey)
+Integration with Prometheus & Grafana		REST API Access via Proxy Layer (optional)	Built-in Auto-Tiering
+Backup Capabilities (manual/cron-based)		Resource Limits (via container management)	Automatic Autoscaling (requires orchestration logic)
+Integration with Central Access Management		Active-Active Setup (manual via CRDT / replication logic)	Redis Sentinel UI or Enterprise Admin UI
 
-Advanced integrations with BI tools
-Cloud instances
-🗒️Additional information
-Redis EE leverages Kubernetes for container orchestration, enabling seamless deployment and management of Redis clusters across various environments, including on-premises, cloud, or hybrid setups.​
-Kubernetes facilitates easy horizontal and vertical scaling of Redis deployments to meet demand. It also supports high availability through replica sets and persistent storage.​
-The Redis Enterprise Operator automates cluster management tasks such as provisioning, scaling, and failure recovery within Kubernetes environments.​
-Integration with Kubernetes Role-Based Access Control (RBAC) and support for encryption ensures robust security for enterprise deployments.
