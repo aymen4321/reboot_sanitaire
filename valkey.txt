@@ -1,59 +1,153 @@
-Beta - Architecture - Introduction
-Valkey Architecture is based on a high-performance, in-memory key-value data store derived from Redis 7.2+, with a strong open governance model. A typical Valkey deployment includes Valkey nodes running in standalone or clustered mode for horizontal scalability, optional Sentinel-based high availability, and a client-access layer for connection management.
+📘 Redis Valkey Documentation
+Enterprise Open-Source In-Memory Data Platform
 
-Advanced capabilities can be layered in via community-supported extensions (e.g., ValkeyJSON, ValkeyBloom) or Kubernetes-native orchestration. Data persistence is optionally supported via RDB and AOF mechanisms. Monitoring and alerting are integrated using Prometheus/Grafana, or with third-party observability tools.
+Last updated: July 2025
 
-Valkey can be deployed:
+🔹 General Introduction
+Valkey is an open-source, high-performance, in-memory data store forked from Redis 7.2+, maintained under the Linux Foundation. It supports key-value operations, persistence, pub/sub, streams, geospatial data, and Lua scripting. Valkey is designed for high throughput and low-latency workloads and can be deployed in standalone or clustered mode across on-premises, hybrid, or Kubernetes environments.
 
-On-premises
+It is fully compatible with most Redis clients and protocols and serves use cases such as:
 
-In private or public cloud environments (e.g., AWS, Azure, GCP)
+Caching
 
-Inside Kubernetes clusters (Helm charts or Operators)
+Session stores
 
-As part of DevOps pipelines for caching, session storage, or analytics acceleration
+Pub/Sub messaging
 
-📒Beta - Architecture - Scope
-✅ Greenfield Deployment (New Cluster)
-Environment: New Kubernetes Cluster (no existing Redis workloads)
+Real-time analytics
 
-Valkey Version: Latest stable OSS release (7.2+)
+Fraud detection and scoring
 
-Infrastructure: Dedicated compute and memory (in-memory workload profile)
+Feature stores in ML pipelines
 
-Expertise: Familiarity with Redis/Valkey, Helm, K8s, Prometheus
+🧭 User Guide – Getting Started
+1. Prerequisites
+Linux (Debian/Ubuntu, RHEL/CentOS) or Kubernetes
 
-Support model: Community-based, GitHub issues, OSS contributions
+Docker / Podman (for containerized deployments)
 
-✅ Brownfield Deployment (Existing Infrastructure)
-Kubernetes: Existing cluster with workloads already running
+System requirements:
 
-Compatibility: Ensure Kubernetes version supports Helm chart for Valkey
+RAM: Minimum 4GB (recommended 16GB+ for production)
 
-Resource allocation: Dedicated namespaces, tolerations, and node selectors if needed
+CPU: 2+ cores
 
-Integration: Prometheus monitoring, centralized log aggregation
+Disk: SSD recommended for persistence
 
-Support: Requires internal expertise or external integration partner
+2. Installation Options
+Option A: Local (Debian/Ubuntu)
+bash
+Copy
+Edit
+sudo apt update
+sudo apt install valkey-server valkey-tools
+Option B: Docker
+bash
+Copy
+Edit
+docker run -d --name valkey -p 6379:6379 valkey/valkey
+Option C: Kubernetes (Helm)
+bash
+Copy
+Edit
+helm repo add valkey https://charts.valkey.io
+helm install my-valkey valkey/valkey
+3. Configuration
+Configuration file: /etc/valkey/valkey.conf
 
-✅ Hybrid / Mixed Deployment
-On-premises + Cloud hybrid: Valkey can run across heterogeneous environments
+Common settings:
 
-Use cases: Caching, real-time feature stores, fraud scoring, queueing systems
+requirepass for authentication
 
-Design goal: Low-latency, high availability using master-replica or cluster mode
+appendonly yes for AOF persistence
 
-📖Beta - Architecture - Definitions, Acronyms, and Abbreviations
-Term	Definition
-Valkey	Open-source fork of Redis 7.2+, maintained under Linux Foundation
-RDB	Snapshot-based persistence format (periodic saves of dataset to disk)
-AOF	Append-Only File: logs every write operation for durability
-Valkey Cluster	A distributed setup with multiple masters and replicas across shards
-Sentinel	High availability component for failover and monitoring
-Helm	Kubernetes package manager used to deploy Valkey as a chart
-Kubernetes (K8s)	Container orchestration platform for scaling and managing microservices
-Prometheus	Monitoring toolkit to gather metrics, often paired with Grafana
-ValkeyJSON	Community fork of RedisJSON for JSON document storage and queries
-ValkeySearch	Full-text search and secondary indexing extension for Valkey
-ValkeyBloom	Probabilistic data structures (Bloom Filter, HyperLogLog) for memory savings
+save 900 1 for RDB snapshots
 
+4. Starting the Server
+bash
+Copy
+Edit
+valkey-server /etc/valkey/valkey.conf
+5. Connecting
+bash
+Copy
+Edit
+valkey-cli -h localhost -p 6379
+🎓 Tutorials
+💡 Basic Commands
+bash
+Copy
+Edit
+SET user:123 "Alice"
+GET user:123
+DEL user:123
+🧵 Publish/Subscribe
+bash
+Copy
+Edit
+SUBSCRIBE fraud-alerts
+PUBLISH fraud-alerts "Transaction Blocked"
+🧩 Using Lists for Queues
+bash
+Copy
+Edit
+LPUSH transaction_queue "txn:0001"
+RPOP transaction_queue
+🧠 Lua Scripting
+bash
+Copy
+Edit
+EVAL "return redis.call('GET', KEYS[1])" 1 user:123
+🔁 Cluster Setup (Advanced)
+Use valkey-trib or Kubernetes Operator for multi-node setup
+
+Shard data across multiple masters for horizontal scaling
+
+📚 Additional Resources
+Resource	Description
+Valkey GitHub	Source code and issue tracker
+Valkey Docs	Official documentation
+Redis commands compatibility	https://redis.io/commands
+Community Slack	Join the Valkey community
+Recommended Clients	Python (redis-py), Java (lettuce, jedis), Node.js (ioredis)
+
+🔐 Security Policies
+Authentication: Use requirepass or Redis ACLs for user-based access.
+
+TLS Encryption: Enable TLS in configuration for secure data-in-transit.
+
+Firewall rules: Restrict access to trusted internal subnets only.
+
+Role-Based Access (K8s): Use namespaces, RBAC, and Secrets for credentials.
+
+Secrets Management: Store credentials using Vault/Kubernetes Secrets.
+
+Configuration sample:
+
+conf
+Copy
+Edit
+tls-port 6379
+tls-cert-file /etc/ssl/certs/valkey.crt
+tls-key-file /etc/ssl/private/valkey.key
+requirepass SuperSecurePass
+🟡 Golden Rules
+Never expose Valkey directly to the internet. Always use internal-only endpoints or reverse proxies.
+
+Enable AOF or RDB snapshots depending on recovery SLA.
+
+Use strong authentication (requirepass or ACLs).
+
+Monitor memory usage: Use INFO MEMORY and set maxmemory policies (volatile-lru, allkeys-lru).
+
+Avoid KEYS in production: Use SCAN for iterating large sets.
+
+Isolate workloads: Separate cache from persistent data if possible.
+
+Back up regularly: Automate dumps or use AOF + replication.
+
+Log slow commands: Use slowlog and alert if execution > threshold.
+
+Test persistence recovery periodically in non-prod.
+
+Stay updated with the latest Valkey version and patches.
