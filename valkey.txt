@@ -1,33 +1,59 @@
-Créée par Utilisateur inconnu (u41jl97@zoe.gca), dernière mise à jour par COURAUD Charles (PRESTATAIRE CA-GIP) le mai 23, 2025  1 min de lecture
-✏️Beta - Architecture - Introduction
-Redis Enterprise Architecture consists of Redis Database Nodes for in-memory data storage, a Redis Enterprise Cluster (REC) for high availability management, and a Proxy for load balancing, connection pooling, and SSL termination. Additional layers include Redis Enterprise Modules (e.g., RediSearch, RedisGraph) for enhanced functionality, Persistence & Backup for optional disk persistence, and Monitoring & Alerting for performance insights. It can be deployed on-premises, in the Cloud (e.g., AWS, GCP), on Kubernetes, or as a fully managed service (Redis Enterprise Cloud).
+Beta - Architecture - Introduction
+Valkey Architecture is based on a high-performance, in-memory key-value data store derived from Redis 7.2+, with a strong open governance model. A typical Valkey deployment includes Valkey nodes running in standalone or clustered mode for horizontal scalability, optional Sentinel-based high availability, and a client-access layer for connection management.
 
+Advanced capabilities can be layered in via community-supported extensions (e.g., ValkeyJSON, ValkeyBloom) or Kubernetes-native orchestration. Data persistence is optionally supported via RDB and AOF mechanisms. Monitoring and alerting are integrated using Prometheus/Grafana, or with third-party observability tools.
 
+Valkey can be deployed:
 
+On-premises
 
+In private or public cloud environments (e.g., AWS, Azure, GCP)
+
+Inside Kubernetes clusters (Helm charts or Operators)
+
+As part of DevOps pipelines for caching, session storage, or analytics acceleration
 
 📒Beta - Architecture - Scope
+✅ Greenfield Deployment (New Cluster)
+Environment: New Kubernetes Cluster (no existing Redis workloads)
 
+Valkey Version: Latest stable OSS release (7.2+)
 
+Infrastructure: Dedicated compute and memory (in-memory workload profile)
 
-Greenfield (Diderot - Dalembert) Deployment
-New Kubernetes Cluster: No existing workloads or configurations.
-Redis Enterprise Version: Latest or specified version compatible with the target Kubernetes version.
-Infrastructure: Dedicated resources for Redis Enterprise to ensure performance.
-Expertise: Familiarity with both Kubernetes and Redis Enterprise administration.
-Enterprise license
-Brownfield Deployment
-Existing Kubernetes Cluster: With or without current workloads.
-Compatibility Check: Ensure Redis Enterprise version compatibility with the existing Kubernetes environment.
-Resource Allocation: Guaranteed resources for Redis Enterprise to prevent resource contention.
-Expertise: Experienced team in integrating new services into existing Kubernetes environments.
-Enterprise license.
-Hybrid Deployment
-Compatibility across  on-premise Kubernetes setups.
+Expertise: Familiarity with Redis/Valkey, Helm, K8s, Prometheus
+
+Support model: Community-based, GitHub issues, OSS contributions
+
+✅ Brownfield Deployment (Existing Infrastructure)
+Kubernetes: Existing cluster with workloads already running
+
+Compatibility: Ensure Kubernetes version supports Helm chart for Valkey
+
+Resource allocation: Dedicated namespaces, tolerations, and node selectors if needed
+
+Integration: Prometheus monitoring, centralized log aggregation
+
+Support: Requires internal expertise or external integration partner
+
+✅ Hybrid / Mixed Deployment
+On-premises + Cloud hybrid: Valkey can run across heterogeneous environments
+
+Use cases: Caching, real-time feature stores, fraud scoring, queueing systems
+
+Design goal: Low-latency, high availability using master-replica or cluster mode
+
 📖Beta - Architecture - Definitions, Acronyms, and Abbreviations
-
-
-Redis Enterprise	An enterprise-grade, in-memory database platform built upon the open-source Redis
-Kubernetes (K8s)	An open-source container orchestration system for automating the deployment, scaling, and management of containerized applications
-
+Term	Definition
+Valkey	Open-source fork of Redis 7.2+, maintained under Linux Foundation
+RDB	Snapshot-based persistence format (periodic saves of dataset to disk)
+AOF	Append-Only File: logs every write operation for durability
+Valkey Cluster	A distributed setup with multiple masters and replicas across shards
+Sentinel	High availability component for failover and monitoring
+Helm	Kubernetes package manager used to deploy Valkey as a chart
+Kubernetes (K8s)	Container orchestration platform for scaling and managing microservices
+Prometheus	Monitoring toolkit to gather metrics, often paired with Grafana
+ValkeyJSON	Community fork of RedisJSON for JSON document storage and queries
+ValkeySearch	Full-text search and secondary indexing extension for Valkey
+ValkeyBloom	Probabilistic data structures (Bloom Filter, HyperLogLog) for memory savings
 
