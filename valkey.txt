@@ -1,26 +1,49 @@
-Dear [Client Name],
+Créée par Utilisateur inconnu (u41jl97@zoe.gca), dernière mise à jour par NOUSHI Reda (PRESTATAIRE CA-GIP) le juil. 11, 2025  1 min de lecture
+The product includes
+INCLUDED SERVICE
 
-We have identified a recurring Kafka consumption lag occurring daily at approximately 23:20, impacting topic consumption performance. Our monitoring indicates a network throughput spike at the same time, which correlates with the observed lag and temporary drop in message processing.
 
-✅ What we’ve verified so far:
 
-Kafka brokers are healthy and operational
+Multi DC Active Redis Enterprise Cluster
+In Memory Databases
+Grafana Dashboards
+Databases backups
+Cluster backups
+Cluster Administration UI
+Alerting
+Database Access Management with My-Access Management
+Cluster Access Management via My-Access Management
+Enterprise Support
+ADDS-ON
 
-Topics and consumer groups are active
 
-No internal application or Kafka errors observed
 
-🔍 Current hypothesis:
-The lag appears to be related to external system activity (e.g., backup, patching, or data transfer jobs) saturating network or I/O bandwidth around 23:20.
+RedisTimeSeries: For handling time-series data, ideal for IoT and analytics applications.
+RedisSearch: Provides full-text and vector similarity search capabilities within Redis.
+RedisJSON: Supports flexible storage and querying of JSON documents.
+RedisBloom: Enhances memory efficiency with bloom filters and hyperloglog structures.
+OPTIONAL SERVICE
 
-📌 Next steps:
 
-Coordinate with infrastructure teams to review scheduled jobs at/around 23:20
 
-Analyze system-level logs and resource usage on Kafka brokers and consumers
+RedisInsight client
+Customised Logs Dashboards
+Persistence of data (In Disk)
+Customised Grafana Dashboards
+Customised Prometheus Dashboards
+API Access
+CLI Access
+Autoscaling
+Mail alerts
+Rousources limits by database
+Auto Tiering
+Active-Active mode
+NON INCLUDED SERVICE
 
-Prepare mitigation measures (e.g., job rescheduling, bandwidth throttling, or consumer tuning)
-
-We will keep you updated with our findings and recommendations. Please let us know if there have been any known activities or deployments scheduled at that time window.
-
-Best regards,
+Advanced integrations with BI tools
+Cloud instances
+🗒️Additional information
+Redis EE leverages Kubernetes for container orchestration, enabling seamless deployment and management of Redis clusters across various environments, including on-premises, cloud, or hybrid setups.​
+Kubernetes facilitates easy horizontal and vertical scaling of Redis deployments to meet demand. It also supports high availability through replica sets and persistent storage.​
+The Redis Enterprise Operator automates cluster management tasks such as provisioning, scaling, and failure recovery within Kubernetes environments.​
+Integration with Kubernetes Role-Based Access Control (RBAC) and support for encryption ensures robust security for enterprise deployments.
