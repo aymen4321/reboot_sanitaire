@@ -1,1 +1,61 @@
-To optimise the cost of the Redis CIB cluster, we collected all the existant DBs, to reduce the cost we suggest to contact all the application in DEV, INT and PPRD environnements to check with them if they will be going on PRD or not, if not we suggest that we can decomissionate the DBs related to it on the other environments. Since we don’t have access to the servers because it belongs to the socle team we can’t access the servers and check how much is used compared to what was requested.
+Redis Cost Optimization Study – CACIB
+As part of the cost optimization efforts for Redis usage within CACIB, we conducted an initial assessment of the Redis CIB cluster. Below are the key findings and proposed actions:
+
+1. Database Inventory Across Environments
+We have collected and consolidated a list of all existing Redis databases across the DEV, INT, and PPRD environments.
+
+The goal is to identify unused or non-critical databases that can be decommissioned to reduce resource consumption and associated costs.
+
+2. Action Plan – Application Owner Validation
+We suggest contacting all application teams to:
+
+Confirm whether their applications are expected to go live in production.
+
+If not, we recommend decommissioning the related databases from non-production environments to eliminate unnecessary usage.
+
+3. Limitations – Resource Visibility
+Since we do not have access to the underlying servers (managed by the socle team), we are currently unable to:
+
+Check actual usage levels.
+
+Compare requested vs. consumed resources.
+
+
+ Redis Cost Optimization – Additional Strategies
+1. Instance Sizing & Consolidation
+Right-size databases: Review memory limits and actual usage per DB. Resize over-provisioned instances.
+
+DB consolidation: If multiple apps can tolerate shared access, consider consolidating small DBs into fewer instances (namespaces or databases within the same Redis instance).
+
+2. Data Expiry & Retention Policies
+Use EXPIRE or TTL aggressively on cache-type data.
+
+Regularly clean up old/unreferenced keys using background jobs or SCAN/DEL patterns.
+
+3. Persistence Configuration Review
+If high durability isn’t required, consider:
+
+Disabling AOF (Append Only File).
+
+Adjusting RDB snapshot frequency.
+
+Persistence tuning can significantly reduce disk usage and I/O cost.
+
+4. Use of Open Source (Valkey / Redis OSS)
+For non-critical environments (e.g., DEV/INT), switch from Redis Enterprise to Valkey or Redis OSS to avoid license costs while maintaining similar functionality.
+
+5. Subscription Tier Optimization (for Redis Enterprise)
+If you're using Redis Enterprise:
+
+Re-evaluate the enterprise support tier.
+
+Disable unused modules (e.g., RedisGraph, RedisTimeSeries).
+
+Reassess whether Active-Active or multiregion is required.
+
+6. Optimize Memory Usage
+Use efficient data structures (e.g., Hashes, Bitmaps, HyperLogLog).
+
+Avoid large string blobs or improperly serialized objects.
+
+Use MEMORY USAGE <key> to analyze and optimize key footprint.
