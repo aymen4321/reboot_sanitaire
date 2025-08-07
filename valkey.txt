@@ -1,61 +1,36 @@
-Redis Cost Optimization Study – CACIB
-As part of the cost optimization efforts for Redis usage within CACIB, we conducted an initial assessment of the Redis CIB cluster. Below are the key findings and proposed actions:
+Étude d’Optimisation des Coûts Redis – CACIB
+1. Inventaire des bases Redis dans les environnements
 
-1. Database Inventory Across Environments
-We have collected and consolidated a list of all existing Redis databases across the DEV, INT, and PPRD environments.
+Un inventaire a été réalisé sur l’ensemble des bases Redis existantes dans les environnements DEV, INT et PPRD.
 
-The goal is to identify unused or non-critical databases that can be decommissioned to reduce resource consumption and associated costs.
+L’objectif est d’identifier les bases non utilisées ou non critiques afin de les désactiver et ainsi réduire la consommation de ressources et les coûts associés.
 
-2. Action Plan – Application Owner Validation
-We suggest contacting all application teams to:
+2. Plan d’Action – Validation par les équipes applicatives
 
-Confirm whether their applications are expected to go live in production.
+Il est recommandé de contacter les équipes applicatives afin de :
 
-If not, we recommend decommissioning the related databases from non-production environments to eliminate unnecessary usage.
+Confirmer si les applications concernées sont destinées à passer en production.
 
-3. Limitations – Resource Visibility
-Since we do not have access to the underlying servers (managed by the socle team), we are currently unable to:
+Si ce n’est pas le cas, proposer la désactivation des bases Redis associées dans les environnements non-prod.
 
-Check actual usage levels.
+3. Limites – Visibilité sur les ressources
 
-Compare requested vs. consumed resources.
+N’ayant pas d’accès aux serveurs (gérés par l’équipe socle), nous ne pouvons pas :
+
+Vérifier le niveau réel d’utilisation des bases.
+
+Comparer les ressources allouées avec les ressources réellement utilisées.
 
 
- Redis Cost Optimization – Additional Strategies
-1. Instance Sizing & Consolidation
-Right-size databases: Review memory limits and actual usage per DB. Resize over-provisioned instances.
 
-DB consolidation: If multiple apps can tolerate shared access, consider consolidating small DBs into fewer instances (namespaces or databases within the same Redis instance).
+💰 Cost Optimization for ECS S3 Storage
+ECS S3 is billed on a pay-as-you-go model, which means you are charged based on actual usage (storage consumed, requests made, data transferred).
 
-2. Data Expiry & Retention Policies
-Use EXPIRE or TTL aggressively on cache-type data.
+➡️ No action is required from our side for cost optimization at this stage, since:
 
-Regularly clean up old/unreferenced keys using background jobs or SCAN/DEL patterns.
+There is no over-provisioning: You only pay for what you use.
 
-3. Persistence Configuration Review
-If high durability isn’t required, consider:
+The billing is usage-based, so unused capacity doesn’t incur extra costs.
 
-Disabling AOF (Append Only File).
+However, for long-term efficiency, it is recommended to monitor data growth and consider data lifecycle policies (archiving/deletion) if applicable in the future.
 
-Adjusting RDB snapshot frequency.
-
-Persistence tuning can significantly reduce disk usage and I/O cost.
-
-4. Use of Open Source (Valkey / Redis OSS)
-For non-critical environments (e.g., DEV/INT), switch from Redis Enterprise to Valkey or Redis OSS to avoid license costs while maintaining similar functionality.
-
-5. Subscription Tier Optimization (for Redis Enterprise)
-If you're using Redis Enterprise:
-
-Re-evaluate the enterprise support tier.
-
-Disable unused modules (e.g., RedisGraph, RedisTimeSeries).
-
-Reassess whether Active-Active or multiregion is required.
-
-6. Optimize Memory Usage
-Use efficient data structures (e.g., Hashes, Bitmaps, HyperLogLog).
-
-Avoid large string blobs or improperly serialized objects.
-
-Use MEMORY USAGE <key> to analyze and optimize key footprint.
