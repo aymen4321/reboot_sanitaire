@@ -1,36 +1,52 @@
-Étude d’Optimisation des Coûts Redis – CACIB
-1. Inventaire des bases Redis dans les environnements
+Objet : Rapport DATA IA RUN – période de ton absence
 
-Un inventaire a été réalisé sur l’ensemble des bases Redis existantes dans les environnements DEV, INT et PPRD.
+Salut [Prénom],
 
-L’objectif est d’identifier les bases non utilisées ou non critiques afin de les désactiver et ainsi réduire la consommation de ressources et les coûts associés.
+Oussema m’a demandé de te préparer un rapport afin que tu aies une vision globale de ce qui s’est passé côté DATA IA RUN pendant ton absence.
 
-2. Plan d’Action – Validation par les équipes applicatives
+1. Incidents
 
-Il est recommandé de contacter les équipes applicatives afin de :
+Kafka (PRD) : problème d’autorisation pour consommer depuis les brokers → résolu.
 
-Confirmer si les applications concernées sont destinées à passer en production.
+CVA INT : redémarrage de deux nœuds ayant entraîné la perte de 3 pods Redis REC et de quelques bases → j’ai pu restaurer le cluster et récupérer toutes les bases.
 
-Si ce n’est pas le cas, proposer la désactivation des bases Redis associées dans les environnements non-prod.
+2. Documentation (avancées techniques)
 
-3. Limites – Visibilité sur les ressources
+On a pu avancer sur la documentation des briques suivantes :
 
-N’ayant pas d’accès aux serveurs (gérés par l’équipe socle), nous ne pouvons pas :
+Redis Valkey
 
-Vérifier le niveau réel d’utilisation des bases.
+MongoDB
 
-Comparer les ressources allouées avec les ressources réellement utilisées.
+S3
 
+3. Activité tickets
 
+Sur la période du 28/07/2025 au 25/08/2025, l’équipe RUN a traité 97 tickets, dont 7 tickets critiques (“noir”).
+Répartition côté DATA IA :
 
-💰 Cost Optimization for ECS S3 Storage
-ECS S3 is billed on a pay-as-you-go model, which means you are charged based on actual usage (storage consumed, requests made, data transferred).
+Aymen : 47
 
-➡️ No action is required from our side for cost optimization at this stage, since:
+Hui : 40
 
-There is no over-provisioning: You only pay for what you use.
+Bhara : 1
 
-The billing is usage-based, so unused capacity doesn’t incur extra costs.
+Sagar : 3
 
-However, for long-term efficiency, it is recommended to monitor data growth and consider data lifecycle policies (archiving/deletion) if applicable in the future.
+Oumar : 4
 
+4. Réduction de coûts
+
+Comme tu l’avais proposé, on a commencé à regarder des pistes d’optimisation :
+
+Kafka & MongoDB : avancées menées par Hui.
+
+Redis & MongoDB : de mon côté, Redis est opérationnel et j’ai la liste complète de toutes les bases. Par contre, on n’a pas encore accès aux bases pour comparer la taille commandée avec la taille réellement utilisée.
+
+S3 (pay-as-you-go) : une stratégie peut être mise en place pour réduire la consommation.
+
+5. Autres points
+
+Bonne nouvelle : on a désormais accès à Power BI avec un dashboard DATA IA.
+
+Le WIP du 23/08/2025 s’est bien déroulé.
